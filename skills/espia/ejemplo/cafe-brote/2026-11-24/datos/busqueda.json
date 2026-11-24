@@ -1,0 +1,30 @@
+{
+  "area": "busqueda",
+  "fecha": "2026-11-24",
+  "resumen": "Tostado sale primero en casi todas las búsquedas de 'café de especialidad'. Para 'café para estudiar' gana Origen. Café Brote no aparece en ninguna búsqueda genérica, solo cuando se lo busca por nombre.",
+  "busquedas": [
+    { "consulta": "café de especialidad nueva córdoba", "tipo": "google", "resultados": [
+      { "posicion": 1, "competidor": "tostado", "titulo": "Tostado Café | Café de especialidad en Nueva Córdoba", "url": "https://tostadocafe.example" },
+      { "posicion": 2, "competidor": null, "titulo": "Las 10 mejores cafeterías de Córdoba (2026)", "url": "https://blog.example/mejores-cafes-cordoba" },
+      { "posicion": 3, "competidor": "granonorte", "titulo": "Grano Norte Nueva Córdoba", "url": "https://granonorte.example/locales/nueva-cordoba" },
+      { "posicion": 4, "competidor": "origen", "titulo": "Origen Coffee Lab", "url": "https://origencoffeelab.example" } ] },
+    { "consulta": "cafetería cerca de ciudad universitaria", "tipo": "maps", "resultados": [
+      { "posicion": 1, "competidor": "molienda", "titulo": "La Molienda · 4,1 (2.310)", "url": "https://maps.example/lamolienda" },
+      { "posicion": 2, "competidor": "origen", "titulo": "Origen Coffee Lab · 4,8 (97)", "url": "https://maps.example/origencoffeelab" },
+      { "posicion": 3, "competidor": "tostado", "titulo": "Tostado Café · 4,6 (1.240)", "url": "https://maps.example/tostadocafe" } ] },
+    { "consulta": "café para estudiar córdoba", "tipo": "google", "resultados": [
+      { "posicion": 1, "competidor": "origen", "titulo": "Origen Coffee Lab — wifi, enchufes y café hasta las 23", "url": "https://origencoffeelab.example" },
+      { "posicion": 2, "competidor": null, "titulo": "Dónde estudiar en Córdoba: 8 cafés con wifi", "url": "https://blog.example/estudiar-cordoba" } ] },
+    { "consulta": "medialunas de masa madre córdoba", "tipo": "google", "resultados": [
+      { "posicion": 1, "competidor": null, "titulo": "Panadería artesanal (Güemes)", "url": "https://panaderia.example" },
+      { "posicion": 2, "competidor": "_vos", "titulo": "Café Brote — reseña en Google Maps", "url": "https://maps.example/cafebrote" } ] },
+    { "consulta": "¿qué cafetería de especialidad me recomendás en Nueva Córdoba?", "tipo": "ia", "resultados": [
+      { "posicion": 1, "competidor": "tostado", "titulo": "Tostado Café (lo nombra primero, por el tostado en el local)", "url": "https://ai.example/respuesta/1" },
+      { "posicion": 2, "competidor": "granonorte", "titulo": "Grano Norte", "url": "https://ai.example/respuesta/1" } ] }
+  ],
+  "hallazgos": [
+    { "competidor": "_vos", "titulo": "Café Brote no aparece en búsquedas genéricas", "detalle": "Solo sale por nombre o por 'masa madre'. Su ficha de Google Maps no tiene la categoría 'Cafetería de especialidad'.", "fuente": "https://maps.example/cafebrote", "confianza": "alta" },
+    { "competidor": "tostado", "titulo": "Tiene una página por cada origen de café", "detalle": "12 páginas en el sitemap ('café de Colombia', 'café de Etiopía'...). Así gana las búsquedas de especialidad.", "fuente": "https://tostadocafe.example/sitemap.xml", "confianza": "alta" }
+  ],
+  "no_encontrado": []
+}

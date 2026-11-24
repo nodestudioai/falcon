@@ -1,0 +1,106 @@
+{
+  "area": "resenas",
+  "fecha": "2026-10-24",
+  "resumen": "La queja que más se repite en toda la zona es la demora en horario pico (Tostado y Molienda). Origen tiene nota alta pero pocas reseñas y ya aparecen quejas de ruido. Nadie es elogiado por la pastelería: es el hueco de Café Brote.",
+  "reputacion": [
+    {
+      "competidor": "_vos",
+      "plataforma": "Google Maps",
+      "nota": 4.7,
+      "escala": 5,
+      "cantidad": 186,
+      "elogios": [
+        "medialunas de masa madre (muchas menciones)",
+        "ambiente tranquilo"
+      ],
+      "quejas": [
+        "no abren los domingos",
+        "pocas opciones sin TACC"
+      ],
+      "fuente": "https://maps.example/cafebrote"
+    },
+    {
+      "competidor": "tostado",
+      "plataforma": "Google Maps",
+      "nota": 4.6,
+      "escala": 5,
+      "cantidad": 1205,
+      "elogios": [
+        "el café (lo más mencionado)",
+        "los baristas explican el origen"
+      ],
+      "quejas": [
+        "demora los fines de semana (~30 de las últimas 100)",
+        "pocas mesas",
+        "caro para lo que es la porción"
+      ],
+      "fuente": "https://maps.example/tostadocafe"
+    },
+    {
+      "competidor": "origen",
+      "plataforma": "Google Maps",
+      "nota": 4.9,
+      "escala": 5,
+      "cantidad": 52,
+      "elogios": [
+        "precio",
+        "lugar para estudiar con enchufes"
+      ],
+      "quejas": [
+        "mucho ruido a la tarde",
+        "medialunas recalentadas (varias menciones)"
+      ],
+      "fuente": "https://maps.example/origencoffeelab"
+    },
+    {
+      "competidor": "molienda",
+      "plataforma": "Google Maps",
+      "nota": 4.1,
+      "escala": 5,
+      "cantidad": 2310,
+      "elogios": [
+        "barato",
+        "abierto temprano"
+      ],
+      "quejas": [
+        "atención lenta (~40 de las últimas 100)",
+        "café quemado",
+        "baños"
+      ],
+      "fuente": "https://maps.example/lamolienda"
+    },
+    {
+      "competidor": "granonorte",
+      "plataforma": "Google Maps (local Nueva Córdoba)",
+      "nota": 4.3,
+      "escala": 5,
+      "cantidad": 3120,
+      "elogios": [
+        "app y retiro sin fila",
+        "siempre igual en todos los locales"
+      ],
+      "quejas": [
+        "impersonal",
+        "precios altos"
+      ],
+      "fuente": "https://maps.example/granonorte-nvacba"
+    }
+  ],
+  "hallazgos": [
+    {
+      "competidor": "tostado",
+      "titulo": "No responde las reseñas negativas",
+      "detalle": "De las últimas 30 reseñas de 1 y 2 estrellas, no contestó ninguna.",
+      "fuente": "https://maps.example/tostadocafe",
+      "confianza": "alta"
+    },
+    {
+      "competidor": "origen",
+      "titulo": "Piden 'algo dulce que no sea medialuna'",
+      "detalle": "Aparece en 8 reseñas: quieren budines, cookies o algo sin TACC.",
+      "fuente": "https://maps.example/origencoffeelab",
+      "confianza": "media"
+    }
+  ],
+  "no_encontrado": []
+}

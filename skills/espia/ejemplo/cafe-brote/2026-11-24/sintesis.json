@@ -1,0 +1,35 @@
+{
+  "resumen": "Tu mayor amenaza no es Tostado, es Origen: abrió hace 10 semanas a dos cuadras, cobra menos y es el único que anuncia todos los días. Pero nadie en la zona es conocido por la pastelería, que es justo lo que tus clientes más elogian. Y La Molienda, la más elegida por estudiantes, puede estar por irse.",
+  "conclusiones": [
+    "Origen Coffee Lab tiene 9 anuncios activos y vos ninguno: hoy le está hablando a tus clientes todos los días.",
+    "Tus medialunas son las más caras de la zona ($1.900 contra $1.400 de promedio), pero son lo que más elogian tus reseñas: hay que mostrarlas, no bajarlas.",
+    "La demora en horario pico es la queja número uno de Tostado y Molienda (70 de las últimas 200 reseñas).",
+    "No aparecés en ninguna búsqueda de 'café de especialidad' ni en lo que recomienda la IA."
+  ],
+  "competidores": [
+    { "id": "origen", "amenaza": 5, "posicionamiento": "El café barato y cómodo para quedarse a estudiar", "fortalezas": ["Precios de apertura más bajos", "Anuncios todos los días", "TikTok que crece rápido"], "debilidades": ["Medialunas recalentadas (reseñas)", "Ruido a la tarde", "Precios 'hasta fin de año': van a subir"], "como_ganarle": "No pelees por precio: peleá por la pastelería y por la tranquilidad. 'El café donde se puede charlar' contra 'el café para estudiar'." },
+    { "id": "tostado", "amenaza": 4, "posicionamiento": "El café 'de origen' premium de la zona", "fortalezas": ["Marca fuerte en Instagram", "Gana las búsquedas de especialidad", "Ahora vende a oficinas"], "debilidades": ["Demora los fines de semana", "Pocas mesas", "No responde reseñas malas", "Subió 12% en noviembre"], "como_ganarle": "Velocidad y precio: estás $400 abajo en el flat white. Decilo." },
+    { "id": "molienda", "amenaza": 3, "posicionamiento": "El café barato de siempre frente a la facultad", "fortalezas": ["El más barato", "2.310 reseñas", "Precio para estudiantes"], "debilidades": ["Atención lenta", "Café de baja calidad", "Cero presencia digital", "Puede estar por mudarse"], "como_ganarle": "Si se va, sus clientes van a buscar otro café: tené listo un 'desayuno estudiante' para recibirlos." },
+    { "id": "granonorte", "amenaza": 3, "posicionamiento": "La cadena cómoda: app, puntos y siempre igual", "fortalezas": ["App con puntos", "Presupuesto enorme en anuncios", "Llega a Córdoba Centro en 2027"], "debilidades": ["Impersonal", "El más caro", "La suscripción no llega a Córdoba"], "como_ganarle": "Ganale de mano con lo que todavía no trae: suscripción de café y trato de barrio." },
+    { "id": "puntocafe", "amenaza": 2, "posicionamiento": "El café rápido para llevar en la ruta", "fortalezas": ["Precio", "2x1 de mañana"], "debilidades": ["App con nota 3,4", "No es de especialidad"], "como_ganarle": "Compite solo en el café de la mañana para llevar: un 'café al paso' en 2 minutos alcanza." }
+  ],
+  "oportunidades": [
+    { "titulo": "Ser 'los de la pastelería'", "evidencia": "Tus reseñas elogian las medialunas de masa madre y nadie más es elogiado por la pastelería. Origen tiene quejas de medialunas recalentadas y 8 reseñas piden 'algo dulce que no sea medialuna'.", "accion": "Sumá 2 productos dulces (budín y cookie sin TACC) y hacé de la pastelería el centro de tu comunicación: 'horneado a las 6, se termina a las 11'.", "competidores": ["origen", "tostado"] },
+    { "titulo": "Café de suscripción antes que llegue Grano Norte", "evidencia": "Grano Norte tiene suscripción solo en CABA y abre en Córdoba en 2027. Ningún café de la zona tiene plan mensual. Tostado recién lanzó venta a oficinas.", "accion": "Lanzá 'Brote ilimitado': 1 café por día a $65.000 por mes para oficinistas de la zona. Probalo con 30 lugares.", "competidores": ["granonorte", "tostado"] },
+    { "titulo": "Prometé velocidad", "evidencia": "La demora es la queja número uno de Tostado (~30 de 100) y Molienda (~40 de 100).", "accion": "'Tu café en 5 minutos o la medialuna va por nuestra cuenta' en horario pico. Ponelo en la vidriera y en el primer anuncio.", "competidores": ["tostado", "molienda"] },
+    { "titulo": "Recibir a los clientes de La Molienda", "evidencia": "Publicó el local en alquiler el 1 de noviembre. Tiene 2.310 reseñas: mucha gente va todos los días.", "accion": "Armá un desayuno estudiante ($4.900) y un anuncio local apuntado a 1 km de la facultad, listo para prender si cierra.", "competidores": ["molienda"] }
+  ],
+  "angulos": [
+    { "titulo": "El proceso como espectáculo", "por_que": "El reel del tostado de Tostado tiene 210 mil vistas y su único anuncio lleva 114 días activo: mostrar cómo se hace funciona en el rubro.", "ejemplo": "Reel de 15 segundos: tus medialunas de masa madre de las 5 de la mañana al mostrador, con el sonido del hojaldre." },
+    { "titulo": "Rankings de la zona", "por_que": "El video de Origen 'rankeando cafés para estudiar' tiene 480 mil vistas.", "ejemplo": "'Las 3 mejores medialunas de Nueva Córdoba (y una es nuestra)' — con humor y sin hablar mal de nadie." },
+    { "titulo": "Una oferta de primera visita", "por_que": "El anuncio de 'primer café gratis' de Origen lleva 73 días prendido: le funciona.", "ejemplo": "'Tu primera medialuna de masa madre va por nuestra cuenta' con botón a Cómo llegar." }
+  ],
+  "plan": [
+    { "accion": "Completá tu ficha de Google Maps: categoría 'Cafetería de especialidad', fotos de la pastelería y precios", "por_que": "No aparecés en ninguna búsqueda genérica de la zona", "impacto": "alto", "esfuerzo": "bajo", "plazo": "esta semana" },
+    { "accion": "Prendé tu primer anuncio en Meta: 'tu primera medialuna va por nuestra cuenta', 1 km alrededor del local", "por_que": "Origen anuncia todos los días y vos no; su oferta de primera visita lleva 73 días activa", "impacto": "alto", "esfuerzo": "bajo", "plazo": "esta semana" },
+    { "accion": "Grabá 3 reels del horneado y publicá 3 veces por semana", "por_que": "Publicás 1 vez por semana y solo fotos; el proceso es lo que más vistas trae en el rubro", "impacto": "medio", "esfuerzo": "medio", "plazo": "este mes" },
+    { "accion": "Sumá budín y cookie sin TACC", "por_que": "Lo piden en las reseñas de Origen y en las tuyas", "impacto": "medio", "esfuerzo": "bajo", "plazo": "este mes" },
+    { "accion": "Lanzá la suscripción 'Brote ilimitado' con 30 lugares", "por_que": "Nadie la tiene en Córdoba y Grano Norte llega en 2027", "impacto": "alto", "esfuerzo": "medio", "plazo": "trimestre" },
+    { "accion": "Repetí este espionaje en 30 días", "por_que": "Origen tiene precios de apertura hasta fin de año y La Molienda puede mudarse", "impacto": "medio", "esfuerzo": "bajo", "plazo": "este mes" }
+  ]
+}

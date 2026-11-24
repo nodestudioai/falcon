@@ -1,0 +1,16 @@
+{
+  "area": "oferta",
+  "fecha": "2026-11-24",
+  "resumen": "Cada uno tiene su promesa clara: Tostado vende origen, Origen vende lugar para estudiar, Molienda vende precio y Grano Norte vende comodidad (app). Nadie vende la pastelería ni el café para la oficina.",
+  "ofertas": [
+    { "competidor": "tostado", "propuesta_valor": "Tostamos cada mañana, a la vista", "productos": ["Café en barra", "Granos por kilo", "Cursos de barista"], "garantia": "", "cta_principal": "Comprá granos online", "embudo": "Instagram → tienda Tiendanube → envío a domicilio", "tecnologia": ["Tiendanube", "Meta Pixel", "Google Analytics", "Mercado Pago"], "fuente": "https://tostadocafe.example" },
+    { "competidor": "origen", "propuesta_valor": "El café para quedarte a estudiar", "productos": ["Café", "Combos de desayuno", "Refill de noche"], "garantia": "Primer café gratis", "cta_principal": "Escribinos por WhatsApp", "embudo": "Anuncio de Meta → WhatsApp con respuesta automática → menú en PDF → visita", "tecnologia": ["Wix", "Meta Pixel", "Botón de WhatsApp"], "fuente": "https://origencoffeelab.example" },
+    { "competidor": "molienda", "propuesta_valor": "El café de siempre, frente a la facu", "productos": ["Café", "Medialunas", "Sándwiches"], "garantia": "", "cta_principal": "Sin llamado a la acción", "embudo": "Sin embudo digital: depende del paso", "tecnologia": ["WordPress"], "fuente": "https://lamolienda.example" },
+    { "competidor": "puntocafe", "propuesta_valor": "Tu café en 2 minutos, en la ruta", "productos": ["Café para llevar", "Panificados"], "garantia": "", "cta_principal": "Bajate la app", "embudo": "Anuncio → app → cupón 2x1", "tecnologia": ["Google Tag Manager", "Meta Pixel", "Google Ads"], "fuente": "https://puntocafe.example" },
+    { "competidor": "granonorte", "propuesta_valor": "Tu café de especialidad, igual en todos lados", "productos": ["Café", "Pastelería", "Granos", "Suscripción (solo CABA)", "Productos de temporada"], "garantia": "", "cta_principal": "Pedí desde la app", "embudo": "Anuncio → app → puntos → canje", "tecnologia": ["Shopify", "Meta Pixel", "TikTok Pixel", "Google Ads", "Klaviyo"], "fuente": "https://granonorte.example" }
+  ],
+  "hallazgos": [
+    { "competidor": "granonorte", "titulo": "Su suscripción de café todavía no llega a Córdoba", "detalle": "La página dice 'Disponible solo en CABA y GBA'.", "fuente": "https://granonorte.example/suscripcion", "confianza": "alta" }
+  ],
+  "no_encontrado": []
+}

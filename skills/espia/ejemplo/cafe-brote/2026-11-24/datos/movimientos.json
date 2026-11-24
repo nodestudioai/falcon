@@ -1,0 +1,14 @@
+{
+  "area": "movimientos",
+  "fecha": "2026-11-24",
+  "resumen": "Tostado se está expandiendo (segundo local y venta mayorista a oficinas). Grano Norte busca local en Córdoba Centro. La Molienda puso el local en alquiler en su Facebook: puede estar por mudarse o cerrar.",
+  "movimientos": [
+    { "competidor": "origen", "fecha": "2026-09-12", "tipo": "apertura", "titulo": "Abre Origen Coffee Lab en Obispo Trejo", "detalle": "Apertura con primer café gratis y anuncios en Meta desde el primer día.", "fuente": "https://instagram.example/origencoffeelab/p/1" },
+    { "competidor": "tostado", "fecha": "2026-10-15", "tipo": "contratacion", "titulo": "Busca 4 baristas y un vendedor para oficinas", "detalle": "El aviso dice 'para nuestro nuevo local en Güemes y la línea Tostado Empresas'.", "fuente": "https://empleos.example/tostado-barista" },
+    { "competidor": "tostado", "fecha": "2026-11-05", "tipo": "lanzamiento", "titulo": "Lanza 'Tostado Empresas': café en grano para oficinas", "detalle": "Planes mensuales para oficinas desde 2 kg. Primera vez que vende B2B.", "fuente": "https://tostadocafe.example/empresas" },
+    { "competidor": "granonorte", "fecha": "2026-11-12", "tipo": "noticia", "titulo": "Anuncia 6 aperturas en el interior en 2027, Córdoba incluida", "detalle": "Nota en un diario económico. Busca local en Córdoba Centro.", "fuente": "https://diario.example/grano-norte-expansion" },
+    { "competidor": "molienda", "fecha": "2026-11-01", "tipo": "otro", "titulo": "Publicó el local en alquiler", "detalle": "Posteo en su página de Facebook: 'se alquila el local, consultas por privado'. No aclara si se muda.", "fuente": "https://facebook.example/lamoliendacba/posts/1" }
+  ],
+  "hallazgos": [],
+  "no_encontrado": []
+}

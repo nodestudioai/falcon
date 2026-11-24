@@ -1,0 +1,37 @@
+{
+  "area": "precios",
+  "fecha": "2026-11-24",
+  "resumen": "Café Brote está en el medio de la tabla en flat white, pero es el más caro en medialunas. Origen Coffee Lab entró con precios agresivos (combo desayuno a $5.500) y Tostado subió 12% en noviembre. Nadie ofrece suscripción ni tarjeta de cliente frecuente.",
+  "precios": [
+    { "competidor": "_vos", "producto": "Flat white", "categoria": "Flat white", "precio": 4300, "precio_texto": "$4.300", "moneda": "ARS", "unidad": "taza", "condiciones": "", "fecha": "2026-11-24", "fuente": "https://cafebrote.example/menu" },
+    { "competidor": "origen", "producto": "Flat white 8 oz", "categoria": "Flat white", "precio": 3900, "precio_texto": "$3.900", "moneda": "ARS", "unidad": "taza", "condiciones": "Precio de apertura 'hasta fin de año'", "fecha": "2026-11-24", "fuente": "https://origencoffeelab.example/menu" },
+    { "competidor": "tostado", "producto": "Flat white", "categoria": "Flat white", "precio": 4700, "precio_texto": "$4.700", "moneda": "ARS", "unidad": "taza", "condiciones": "En PedidosYa $5.300", "fecha": "2026-11-24", "fuente": "https://tostadocafe.example/carta" },
+    { "competidor": "molienda", "producto": "Café con leche grande", "categoria": "Flat white", "precio": 3200, "precio_texto": "$3.200", "moneda": "ARS", "unidad": "taza", "condiciones": "No es de especialidad; precio visto en foto del menú de Google Maps", "fecha": "2026-11-10", "fuente": "https://maps.example/lamolienda/fotos" },
+    { "competidor": "puntocafe", "producto": "Café con leche mediano", "categoria": "Flat white", "precio": 2900, "precio_texto": "$2.900", "moneda": "ARS", "unidad": "vaso", "condiciones": "2x1 con la app de la estación", "fecha": "2026-11-24", "fuente": "https://puntocafe.example/precios" },
+    { "competidor": "granonorte", "producto": "Flat white", "categoria": "Flat white", "precio": 4900, "precio_texto": "$4.900", "moneda": "ARS", "unidad": "taza", "condiciones": "Precio nacional; 15% off con su app", "fecha": "2026-11-24", "fuente": "https://granonorte.example/menu" },
+
+    { "competidor": "_vos", "producto": "Medialuna de masa madre", "categoria": "Medialuna", "precio": 1900, "precio_texto": "$1.900", "moneda": "ARS", "unidad": "unidad", "condiciones": "", "fecha": "2026-11-24", "fuente": "https://cafebrote.example/menu" },
+    { "competidor": "origen", "producto": "Medialuna de manteca", "categoria": "Medialuna", "precio": 1400, "precio_texto": "$1.400", "moneda": "ARS", "unidad": "unidad", "condiciones": "", "fecha": "2026-11-24", "fuente": "https://origencoffeelab.example/menu" },
+    { "competidor": "tostado", "producto": "Medialuna", "categoria": "Medialuna", "precio": 1600, "precio_texto": "$1.600", "moneda": "ARS", "unidad": "unidad", "condiciones": "", "fecha": "2026-11-24", "fuente": "https://tostadocafe.example/carta" },
+    { "competidor": "molienda", "producto": "Medialuna", "categoria": "Medialuna", "precio": 900, "precio_texto": "$900", "moneda": "ARS", "unidad": "unidad", "condiciones": "3 por $2.400", "fecha": "2026-11-10", "fuente": "https://maps.example/lamolienda/fotos" },
+    { "competidor": "granonorte", "producto": "Medialuna", "categoria": "Medialuna", "precio": 1700, "precio_texto": "$1.700", "moneda": "ARS", "unidad": "unidad", "condiciones": "", "fecha": "2026-11-24", "fuente": "https://granonorte.example/menu" },
+
+    { "competidor": "_vos", "producto": "Flat white + 2 medialunas", "categoria": "Combo desayuno", "precio": 7400, "precio_texto": "$7.400", "moneda": "ARS", "unidad": "combo", "condiciones": "Sin promo, suma de precios", "fecha": "2026-11-24", "fuente": "https://cafebrote.example/menu" },
+    { "competidor": "origen", "producto": "Desayuno Origen", "categoria": "Combo desayuno", "precio": 5500, "precio_texto": "$5.500", "moneda": "ARS", "unidad": "combo", "condiciones": "Café + 2 medialunas + jugo, hasta las 11", "fecha": "2026-11-24", "fuente": "https://origencoffeelab.example/menu" },
+    { "competidor": "tostado", "producto": "Combo mañana", "categoria": "Combo desayuno", "precio": 6900, "precio_texto": "$6.900", "moneda": "ARS", "unidad": "combo", "condiciones": "Café + tostado o 2 medialunas", "fecha": "2026-11-24", "fuente": "https://tostadocafe.example/carta" },
+    { "competidor": "molienda", "producto": "Desayuno estudiante", "categoria": "Combo desayuno", "precio": 4500, "precio_texto": "$4.500", "moneda": "ARS", "unidad": "combo", "condiciones": "Con libreta universitaria", "fecha": "2026-11-10", "fuente": "https://maps.example/lamolienda/fotos" },
+    { "competidor": "granonorte", "producto": "Desayuno clásico", "categoria": "Combo desayuno", "precio": 7900, "precio_texto": "$7.900", "moneda": "ARS", "unidad": "combo", "condiciones": "", "fecha": "2026-11-24", "fuente": "https://granonorte.example/menu" },
+
+    { "competidor": "tostado", "producto": "Café en grano 250 g (origen Colombia)", "categoria": "Café en grano 250 g", "precio": 14500, "precio_texto": "$14.500", "moneda": "ARS", "unidad": "bolsa", "condiciones": "Envío gratis desde $30.000", "fecha": "2026-11-24", "fuente": "https://tostadocafe.example/tienda" },
+    { "competidor": "origen", "producto": "Blend de la casa 250 g", "categoria": "Café en grano 250 g", "precio": 12000, "precio_texto": "$12.000", "moneda": "ARS", "unidad": "bolsa", "condiciones": "Solo en el local", "fecha": "2026-11-24", "fuente": "https://origencoffeelab.example/menu" },
+    { "competidor": "granonorte", "producto": "Café en grano 250 g", "categoria": "Café en grano 250 g", "precio": 15900, "precio_texto": "$15.900", "moneda": "ARS", "unidad": "bolsa", "condiciones": "Suscripción mensual 10% off (solo CABA)", "fecha": "2026-11-24", "fuente": "https://granonorte.example/tienda" }
+  ],
+  "hallazgos": [
+    { "competidor": "tostado", "titulo": "Subió 12% el flat white en noviembre", "detalle": "En la copia de Wayback del 1 de octubre la carta decía $4.200; hoy $4.700.", "fuente": "https://web.archive.example/20261001/tostadocafe.example/carta", "confianza": "alta" },
+    { "competidor": "origen", "titulo": "Precios de apertura 'hasta fin de año'", "detalle": "El menú aclara que los precios son de lanzamiento. Es probable que suban en enero.", "fuente": "https://origencoffeelab.example/menu", "confianza": "alta" },
+    { "competidor": "molienda", "titulo": "Descuento con libreta universitaria", "detalle": "El único de la zona con precio especial para estudiantes.", "fuente": "https://maps.example/lamolienda/fotos", "confianza": "media" }
+  ],
+  "no_encontrado": [
+    { "competidor": "molienda", "que": "Menú actualizado en la web", "donde": "Web (sin carta), Instagram destacadas (de 2025), Google Maps (foto del 10/11)" }
+  ]
+}

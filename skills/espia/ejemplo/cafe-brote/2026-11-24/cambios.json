@@ -1,0 +1,158 @@
+{
+  "desde": "2026-10-24",
+  "hasta": "2026-11-24",
+  "items": [
+    {
+      "tipo": "precio",
+      "competidor": "tostado",
+      "texto": "Tostado Café subió Flat white un 11,9%",
+      "antes": 4200,
+      "despues": 4700,
+      "importancia": "alta"
+    },
+    {
+      "tipo": "precio",
+      "competidor": "tostado",
+      "texto": "Tostado Café subió Combo desayuno un 11,3%",
+      "antes": 6200,
+      "despues": 6900,
+      "importancia": "alta"
+    },
+    {
+      "tipo": "anuncio_nuevo",
+      "competidor": "origen",
+      "texto": "Origen Coffee Lab prendió un anuncio nuevo en Meta: “Wifi rápido, enchufes en todas las mesas y café hasta las 23”",
+      "antes": null,
+      "despues": null,
+      "importancia": "alta"
+    },
+    {
+      "tipo": "anuncio_nuevo",
+      "competidor": "puntocafe",
+      "texto": "Punto Café prendió un anuncio nuevo en Meta: “2x1 en cafés con la app”",
+      "antes": null,
+      "despues": null,
+      "importancia": "alta"
+    },
+    {
+      "tipo": "anuncio_nuevo",
+      "competidor": "granonorte",
+      "texto": "Grano Norte prendió un anuncio nuevo en Meta: “Llegó el Pan Dulce Latte”",
+      "antes": null,
+      "despues": null,
+      "importancia": "alta"
+    },
+    {
+      "tipo": "anuncios_cantidad",
+      "competidor": "origen",
+      "texto": "Origen Coffee Lab pasó de 5 a 9 anuncios activos en Meta",
+      "antes": 5,
+      "despues": 9,
+      "importancia": "alta"
+    },
+    {
+      "tipo": "anuncios_cantidad",
+      "competidor": "granonorte",
+      "texto": "Grano Norte pasó de 18 a 24 anuncios activos en Meta",
+      "antes": 18,
+      "despues": 24,
+      "importancia": "alta"
+    },
+    {
+      "tipo": "seguidores",
+      "competidor": "origen",
+      "texto": "Origen Coffee Lab ganó 2.300 seguidores en Instagram (+41.1%)",
+      "antes": 5600,
+      "despues": 7900,
+      "importancia": "alta"
+    },
+    {
+      "tipo": "seguidores",
+      "competidor": "origen",
+      "texto": "Origen Coffee Lab ganó 11.700 seguidores en TikTok (+119.4%)",
+      "antes": 9800,
+      "despues": 21500,
+      "importancia": "alta"
+    },
+    {
+      "tipo": "movimiento",
+      "competidor": "tostado",
+      "texto": "Tostado Café: Lanza 'Tostado Empresas': café en grano para oficinas",
+      "antes": null,
+      "despues": null,
+      "importancia": "alta"
+    },
+    {
+      "tipo": "movimiento",
+      "competidor": "granonorte",
+      "texto": "Grano Norte: Anuncia 6 aperturas en el interior en 2027, Córdoba incluida",
+      "antes": null,
+      "despues": null,
+      "importancia": "alta"
+    },
+    {
+      "tipo": "movimiento",
+      "competidor": "molienda",
+      "texto": "La Molienda: Publicó el local en alquiler",
+      "antes": null,
+      "despues": null,
+      "importancia": "alta"
+    },
+    {
+      "tipo": "competidor",
+      "competidor": "puntocafe",
+      "texto": "Nuevo competidor en el radar: Punto Café",
+      "antes": null,
+      "despues": null,
+      "importancia": "media"
+    },
+    {
+      "tipo": "precio",
+      "competidor": "granonorte",
+      "texto": "Grano Norte subió Medialuna un 6,2%",
+      "antes": 1600,
+      "despues": 1700,
+      "importancia": "media"
+    },
+    {
+      "tipo": "anuncio_pausado",
+      "competidor": "origen",
+      "texto": "Origen Coffee Lab apagó el anuncio “Ya abrimos: vení a conocernos”",
+      "antes": null,
+      "despues": null,
+      "importancia": "media"
+    },
+    {
+      "tipo": "reputacion",
+      "competidor": "origen",
+      "texto": "La nota de Origen Coffee Lab en Google Maps bajó de 4.9 a 4.8",
+      "antes": 4.9,
+      "despues": 4.8,
+      "importancia": "media"
+    },
+    {
+      "tipo": "resenas_nuevas",
+      "competidor": "tostado",
+      "texto": "Tostado Café sumó 35 reseñas en Google Maps",
+      "antes": 1205,
+      "despues": 1240,
+      "importancia": "baja"
+    },
+    {
+      "tipo": "resenas_nuevas",
+      "competidor": "origen",
+      "texto": "Origen Coffee Lab sumó 45 reseñas en Google Maps",
+      "antes": 52,
+      "despues": 97,
+      "importancia": "baja"
+    },
+    {
+      "tipo": "seguidores",
+      "competidor": "tostado",
+      "texto": "Tostado Café ganó 500 seguidores en Instagram (+2.8%)",
+      "antes": 17900,
+      "despues": 18400,
+      "importancia": "baja"
+    }
+  ]
+}

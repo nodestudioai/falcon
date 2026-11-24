@@ -1,0 +1,65 @@
+{
+  "fecha": "2026-11-24",
+  "negocio": {
+    "nombre": "Café Brote",
+    "rubro": "Cafetería de especialidad",
+    "descripcion": "Café de especialidad y pastelería de masa madre, para llevar y para quedarse. Ejemplo inventado.",
+    "web": "https://cafebrote.example",
+    "ubicacion": "Nueva Córdoba, Córdoba, Argentina",
+    "pais": "AR",
+    "alcance": "local",
+    "publico": "Estudiantes y oficinistas de 20 a 35 años",
+    "oferta_principal": "Flat white y medialunas de masa madre",
+    "precio_referencia": "Flat white $4.300",
+    "moneda": "ARS",
+    "redes": { "instagram": "https://instagram.example/cafebrote" },
+    "interes": ["precios", "anuncios", "contenido"]
+  },
+  "competidores": [
+    {
+      "id": "origen",
+      "nombre": "Origen Coffee Lab",
+      "tipo": "directo",
+      "por_que": "Abrió en septiembre a dos cuadras, mismo público, café de especialidad",
+      "web": "https://origencoffeelab.example",
+      "ubicacion": "Nueva Córdoba",
+      "redes": { "instagram": "https://instagram.example/origencoffeelab", "tiktok": "https://tiktok.example/@origencoffeelab" }
+    },
+    {
+      "id": "tostado",
+      "nombre": "Tostado Café",
+      "tipo": "directo",
+      "por_que": "La cafetería de especialidad más conocida de la zona, tuesta en el local",
+      "web": "https://tostadocafe.example",
+      "ubicacion": "Nueva Córdoba",
+      "redes": { "instagram": "https://instagram.example/tostadocafe", "tiktok": "https://tiktok.example/@tostadocafe" }
+    },
+    {
+      "id": "molienda",
+      "nombre": "La Molienda",
+      "tipo": "directo",
+      "por_que": "Café tradicional y barato frente a la facultad, el más elegido por estudiantes",
+      "web": "https://lamolienda.example",
+      "ubicacion": "Nueva Córdoba",
+      "redes": { "instagram": "https://instagram.example/lamolienda.cba", "facebook": "https://facebook.example/lamoliendacba" }
+    },
+    {
+      "id": "puntocafe",
+      "nombre": "Punto Café",
+      "tipo": "indirecto",
+      "por_que": "Café para llevar en estaciones de servicio: compite por el café de la mañana",
+      "web": "https://puntocafe.example",
+      "ubicacion": "Córdoba (12 puntos)",
+      "redes": { "instagram": "https://instagram.example/puntocafe.ar" }
+    },
+    {
+      "id": "granonorte",
+      "nombre": "Grano Norte",
+      "tipo": "referente",
+      "por_que": "La cadena de especialidad más grande del país (38 locales): marca el precio del rubro",
+      "web": "https://granonorte.example",
+      "ubicacion": "Nacional",
+      "redes": { "instagram": "https://instagram.example/granonorte", "tiktok": "https://tiktok.example/@granonorte", "linkedin": "https://linkedin.example/company/granonorte" }
+    }
+  ]
+}

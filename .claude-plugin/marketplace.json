@@ -1,0 +1,14 @@
+{
+  "name": "nodestudio",
+  "owner": { "name": "NodeStudio" },
+  "metadata": { "description": "Skills de Claude hechas por NodeStudio." },
+  "plugins": [
+    {
+      "name": "claude-espia",
+      "source": "./",
+      "description": "Agente que espía a tu competencia: precios, anuncios activos, redes, reseñas, SEO y movimientos, con fuente y fecha. Para cualquier rubro.",
+      "version": "1.0.0",
+      "category": "productivity"
+    }
+  ]
+}

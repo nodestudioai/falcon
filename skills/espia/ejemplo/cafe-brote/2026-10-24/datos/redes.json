@@ -1,0 +1,126 @@
+{
+  "area": "redes",
+  "fecha": "2026-10-24",
+  "resumen": "Tostado domina Instagram con reels del proceso de tostado (su mejor video: 210 mil vistas). Origen crece más rápido que nadie con TikTok de 'lugares para estudiar'. Café Brote publica poco y casi solo fotos.",
+  "perfiles": [
+    {
+      "competidor": "_vos",
+      "red": "instagram",
+      "url": "https://instagram.example/cafebrote",
+      "seguidores": 3100,
+      "publicaciones_por_semana": 1,
+      "formato_principal": "fotos",
+      "temas": [
+        "producto",
+        "promos"
+      ],
+      "mejor_contenido": []
+    },
+    {
+      "competidor": "tostado",
+      "red": "instagram",
+      "url": "https://instagram.example/tostadocafe",
+      "seguidores": 17900,
+      "publicaciones_por_semana": 5,
+      "formato_principal": "reels",
+      "temas": [
+        "proceso de tostado",
+        "latte art",
+        "orígenes del café"
+      ],
+      "mejor_contenido": [
+        {
+          "descripcion": "Reel del tostado en cámara lenta con el sonido del grano",
+          "metrica": "210 mil vistas",
+          "url": "https://instagram.example/tostadocafe/reel/1"
+        }
+      ]
+    },
+    {
+      "competidor": "tostado",
+      "red": "tiktok",
+      "url": "https://tiktok.example/@tostadocafe",
+      "seguidores": 6200,
+      "publicaciones_por_semana": 2,
+      "formato_principal": "videos cortos",
+      "temas": [
+        "latte art"
+      ],
+      "mejor_contenido": []
+    },
+    {
+      "competidor": "origen",
+      "red": "instagram",
+      "url": "https://instagram.example/origencoffeelab",
+      "seguidores": 5600,
+      "publicaciones_por_semana": 6,
+      "formato_principal": "reels",
+      "temas": [
+        "apertura",
+        "promos",
+        "estudiar en el café"
+      ],
+      "mejor_contenido": []
+    },
+    {
+      "competidor": "origen",
+      "red": "tiktok",
+      "url": "https://tiktok.example/@origencoffeelab",
+      "seguidores": 9800,
+      "publicaciones_por_semana": 7,
+      "formato_principal": "videos cortos",
+      "temas": [
+        "lugares para estudiar en Córdoba",
+        "humor de estudiante"
+      ],
+      "mejor_contenido": [
+        {
+          "descripcion": "'Rankeando los cafés para estudiar en Nueva Córdoba' (se pone primero)",
+          "metrica": "480 mil vistas",
+          "url": "https://tiktok.example/@origencoffeelab/video/1"
+        }
+      ]
+    },
+    {
+      "competidor": "molienda",
+      "red": "instagram",
+      "url": "https://instagram.example/lamolienda.cba",
+      "seguidores": 2400,
+      "publicaciones_por_semana": 0.5,
+      "formato_principal": "fotos",
+      "temas": [
+        "promos"
+      ],
+      "mejor_contenido": []
+    },
+    {
+      "competidor": "granonorte",
+      "red": "instagram",
+      "url": "https://instagram.example/granonorte",
+      "seguidores": 312000,
+      "publicaciones_por_semana": 9,
+      "formato_principal": "reels",
+      "temas": [
+        "lanzamientos de temporada",
+        "colaboraciones con creadores"
+      ],
+      "mejor_contenido": [
+        {
+          "descripcion": "Colaboración con una creadora: 'pedí lo mismo que yo'",
+          "metrica": "1,2 M de vistas",
+          "url": "https://instagram.example/granonorte/reel/1"
+        }
+      ]
+    }
+  ],
+  "hallazgos": [
+    {
+      "competidor": "origen",
+      "titulo": "Su TikTok creció 3 veces más rápido que el de Tostado",
+      "detalle": "De 0 a 21.500 seguidores en 10 semanas con un solo tema: estudiar.",
+      "fuente": "https://tiktok.example/@origencoffeelab",
+      "confianza": "media"
+    }
+  ],
+  "no_encontrado": []
+}

@@ -1,0 +1,139 @@
+{
+  "area": "anuncios",
+  "fecha": "2026-10-24",
+  "resumen": "Origen Coffee Lab es el único que invierte fuerte: 9 anuncios activos en Meta desde su apertura, todos mandando a WhatsApp o a Google Maps. Tostado tiene un solo anuncio, pero lleva 114 días prendido. La Molienda y Café Brote no anuncian.",
+  "bibliotecas": [
+    {
+      "competidor": "origen",
+      "plataforma": "meta",
+      "activos": 5,
+      "url": "https://ads-library.example/meta?q=origen%20coffee%20lab",
+      "verificado": true
+    },
+    {
+      "competidor": "tostado",
+      "plataforma": "meta",
+      "activos": 1,
+      "url": "https://ads-library.example/meta?q=tostado%20cafe",
+      "verificado": true
+    },
+    {
+      "competidor": "molienda",
+      "plataforma": "meta",
+      "activos": 0,
+      "url": "https://ads-library.example/meta?q=la%20molienda",
+      "verificado": true
+    },
+    {
+      "competidor": "granonorte",
+      "plataforma": "meta",
+      "activos": 18,
+      "url": "https://ads-library.example/meta?q=grano%20norte",
+      "verificado": true
+    },
+    {
+      "competidor": "granonorte",
+      "plataforma": "google",
+      "activos": 6,
+      "url": "https://ads-transparency.example/?domain=granonorte.example",
+      "verificado": true
+    }
+  ],
+  "anuncios": [
+    {
+      "competidor": "tostado",
+      "plataforma": "meta",
+      "activo_desde": "2026-08-02",
+      "formato": "video",
+      "gancho": "Así se ve tu café 12 horas antes de tomarlo",
+      "texto": "Tostamos cada mañana en el local. Vení a verlo: los sábados a las 10 hacemos tostado abierto.",
+      "cta": "Cómo llegar",
+      "oferta": "",
+      "landing": "https://maps.example/tostadocafe",
+      "fuente": "https://ads-library.example/meta/ad/1001"
+    },
+    {
+      "competidor": "origen",
+      "plataforma": "meta",
+      "activo_desde": "2026-09-12",
+      "formato": "video",
+      "gancho": "Abrimos a 2 cuadras de la facu y el primer café va por nuestra cuenta",
+      "texto": "Mostrá este anuncio y tu primer flat white es gratis. Nueva Córdoba, Obispo Trejo 900.",
+      "cta": "Enviar mensaje",
+      "oferta": "Primer café gratis mostrando el anuncio",
+      "landing": "https://wa.example/origencoffeelab",
+      "fuente": "https://ads-library.example/meta/ad/2001"
+    },
+    {
+      "competidor": "origen",
+      "plataforma": "meta",
+      "activo_desde": "2026-09-20",
+      "formato": "carrusel",
+      "gancho": "Desayuno completo a $5.500 (sí, en Nueva Córdoba)",
+      "texto": "Café de especialidad + 2 medialunas + jugo exprimido. Hasta las 11.",
+      "cta": "Cómo llegar",
+      "oferta": "Combo $5.500",
+      "landing": "https://maps.example/origencoffeelab",
+      "fuente": "https://ads-library.example/meta/ad/2002"
+    },
+    {
+      "competidor": "granonorte",
+      "plataforma": "meta",
+      "activo_desde": "2026-03-14",
+      "formato": "video",
+      "gancho": "Tu café de todos los días, con 15% off para siempre",
+      "texto": "Bajate la app de Grano Norte, sumá granos y canjealos por cafés gratis.",
+      "cta": "Descargar",
+      "oferta": "15% off con la app + programa de puntos",
+      "landing": "https://granonorte.example/app",
+      "fuente": "https://ads-library.example/meta/ad/4001"
+    },
+    {
+      "competidor": "granonorte",
+      "plataforma": "google",
+      "activo_desde": "2026-05-20",
+      "formato": "texto",
+      "gancho": "Café de especialidad cerca tuyo | Grano Norte",
+      "texto": "38 locales. Pedí desde la app y retirá sin fila.",
+      "cta": "",
+      "oferta": "Retiro sin fila",
+      "landing": "https://granonorte.example/locales",
+      "fuente": "https://ads-transparency.example/creative/4101"
+    },
+    {
+      "competidor": "origen",
+      "plataforma": "meta",
+      "activo_desde": "2026-09-12",
+      "formato": "imagen",
+      "gancho": "Ya abrimos: vení a conocernos",
+      "texto": "Obispo Trejo 900.",
+      "cta": "Cómo llegar",
+      "oferta": "",
+      "landing": "https://maps.example/origencoffeelab",
+      "fuente": "https://ads-library.example/meta/ad/2000"
+    }
+  ],
+  "hallazgos": [
+    {
+      "competidor": "origen",
+      "titulo": "Manda todo el tráfico a WhatsApp",
+      "detalle": "6 de sus 9 anuncios tienen botón 'Enviar mensaje'. Responde con un mensaje automático y el menú en PDF.",
+      "fuente": "https://ads-library.example/meta?q=origen%20coffee%20lab",
+      "confianza": "alta"
+    },
+    {
+      "competidor": "molienda",
+      "titulo": "No tiene anuncios activos",
+      "detalle": "Tampoco tiene píxel de Meta en la web: no está midiendo ni invirtiendo.",
+      "fuente": "https://ads-library.example/meta?q=la%20molienda",
+      "confianza": "alta"
+    }
+  ],
+  "no_encontrado": [
+    {
+      "competidor": "origen",
+      "que": "Anuncios en TikTok",
+      "donde": "Biblioteca de TikTok (solo cubre Europa)"
+    }
+  ]
+}

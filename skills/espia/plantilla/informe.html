@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Espía</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --papel:#f4f2ec; --hoja:#fffdf8; --tinta:#10192b; --gris:#5b6475; --linea:#ddd8cb; --suave:#ece8dd;
+  --acento:#0a84c6; --rojo:#cf3b2c; --verde:#1d8a57; --ambar:#c68510;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --sans:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--papel);color:var(--tinta);font:15px/1.55 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:var(--acento)}
+h1,h2,h3{margin:0;line-height:1.15;letter-spacing:-.02em}
+.mono{font-family:var(--mono)}
+
+/* Portada */
+.portada{background:var(--tinta);color:#f4f2ec;position:relative;overflow:hidden}
+.portada::before{content:"";position:absolute;inset:0;background:
+  repeating-linear-gradient(0deg,rgba(255,255,255,.035) 0 1px,transparent 1px 28px),
+  repeating-linear-gradient(90deg,rgba(255,255,255,.035) 0 1px,transparent 1px 28px)}
+.portada .dentro{position:relative;max-width:1180px;margin:0 auto;padding:44px 28px 34px}
+.expediente{font:600 12px/1 var(--mono);letter-spacing:.18em;color:#8fb8d6;text-transform:uppercase}
+.portada h1{font-size:clamp(30px,5vw,54px);font-weight:800;margin:14px 0 10px;max-width:820px}
+.portada h1 em{font-style:normal;color:#5cc2f2}
+.portada .sub{color:#b9c2d0;font-size:16px}
+.sello{position:absolute;right:34px;top:34px;transform:rotate(-9deg);border:3px solid var(--rojo);color:var(--rojo);
+  font:700 15px/1 var(--mono);letter-spacing:.22em;padding:10px 14px;border-radius:6px;opacity:.9;background:rgba(207,59,44,.06)}
+.cifras{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.12);border-radius:12px;overflow:hidden;margin-top:30px}
+.cifra{background:var(--tinta);padding:16px 18px}
+.cifra b{display:block;font-size:30px;font-weight:800;letter-spacing:-.03em}
+.cifra span{font:12px/1.3 var(--mono);color:#8e9aae;text-transform:uppercase;letter-spacing:.08em}
+
+/* Barra */
+.barra{position:sticky;top:0;z-index:5;background:rgba(244,242,236,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--linea)}
+.barra .dentro{max-width:1180px;margin:0 auto;padding:10px 28px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.indice{display:flex;gap:4px;flex-wrap:wrap;flex:1}
+.indice a{font:600 12px var(--mono);color:var(--gris);text-decoration:none;padding:6px 9px;border-radius:6px;letter-spacing:.02em}
+.indice a:hover{background:var(--suave);color:var(--tinta)}
+.filtros{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.filtros small{font:11px var(--mono);color:var(--gris);text-transform:uppercase;letter-spacing:.08em;margin-right:2px}
+.chip{border:1px solid var(--linea);background:var(--hoja);color:var(--tinta);font:600 12px var(--sans);padding:6px 10px;border-radius:999px;cursor:pointer;display:inline-flex;gap:6px;align-items:center}
+.chip i{width:8px;height:8px;border-radius:50%;background:var(--c,#999)}
+.chip.on{background:var(--tinta);color:#fff;border-color:var(--tinta)}
+
+main{max-width:1180px;margin:0 auto;padding:10px 28px 80px}
+section{padding:46px 0 10px}
+.cab{display:flex;align-items:baseline;gap:14px;margin-bottom:20px;flex-wrap:wrap}
+.cab .n{font:600 12px var(--mono);color:var(--acento);letter-spacing:.14em}
+.cab h2{font-size:28px;font-weight:800}
+.cab p{flex-basis:100%;margin:4px 0 0;color:var(--gris);max-width:760px}
+.resumen-area{background:var(--hoja);border-left:3px solid var(--acento);padding:12px 16px;border-radius:0 8px 8px 0;color:#2a3446;margin:0 0 18px;max-width:900px}
+
+.tarjeta{background:var(--hoja);border:1px solid var(--linea);border-radius:14px;padding:18px 20px}
+.grilla{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(310px,1fr))}
+.grilla.chica{grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.tag{display:inline-flex;align-items:center;gap:6px;font:600 12.5px var(--sans)}
+.tag::before{content:"";width:9px;height:9px;border-radius:3px;background:var(--c)}
+.etq{display:inline-block;font:600 10.5px var(--mono);text-transform:uppercase;letter-spacing:.08em;padding:3px 7px;border-radius:5px;background:var(--suave);color:var(--gris)}
+.etq.directo{background:#fde7e4;color:#a72d20}.etq.indirecto{background:#fff1d6;color:#8a5a00}.etq.referente{background:#e1f0fa;color:#075f8f}
+.etq.alta{background:#fde7e4;color:#a72d20}.etq.media{background:#fff1d6;color:#8a5a00}.etq.baja{background:#e3f4ea;color:#17683f}
+.src{font:11.5px var(--mono);color:var(--gris);text-decoration:none;white-space:nowrap}
+.src:hover{color:var(--acento)}
+.vacio{color:var(--gris);font-style:italic}
+ul.lista{margin:6px 0 0;padding-left:18px}
+ul.lista li{margin:3px 0}
+
+/* Resumen */
+.resumen{font-size:21px;line-height:1.5;font-weight:500;max-width:900px;margin:0 0 26px}
+.conclusiones{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));counter-reset:c}
+.conclusiones div{counter-increment:c;background:var(--hoja);border:1px solid var(--linea);border-radius:14px;padding:18px 18px 18px 58px;position:relative;font-weight:500}
+.conclusiones div::before{content:counter(c,decimal-leading-zero);position:absolute;left:18px;top:16px;font:700 18px var(--mono);color:var(--acento)}
+
+/* Cambios */
+.cambio{display:flex;gap:12px;align-items:flex-start;padding:11px 0;border-bottom:1px dashed var(--linea)}
+.cambio:last-child{border:0}
+.cambio .etq{flex-shrink:0;margin-top:2px}
+
+/* Competidores */
+.comp h3{font-size:20px;font-weight:800;margin:8px 0 2px}
+.comp .porque{color:var(--gris);font-size:13.5px;margin:0 0 12px}
+.amenaza{display:flex;gap:4px;align-items:center;margin:4px 0 12px}
+.amenaza i{width:22px;height:8px;border-radius:3px;background:var(--suave)}
+.amenaza i.on{background:var(--rojo)}
+.amenaza span{font:11px var(--mono);color:var(--gris);margin-left:8px;text-transform:uppercase;letter-spacing:.06em}
+.pos{font-weight:600;margin:0 0 10px}
+.dos{display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:13.5px}
+.dos h4{font:600 11px var(--mono);text-transform:uppercase;letter-spacing:.08em;margin:0;color:var(--gris)}
+.ganarle{margin-top:14px;background:#e9f5fc;border-radius:10px;padding:10px 12px;font-size:14px}
+.ganarle b{display:block;font:600 11px var(--mono);text-transform:uppercase;letter-spacing:.08em;color:#075f8f;margin-bottom:2px}
+.enlaces{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;font:12px var(--mono)}
+.enlaces a{text-decoration:none}
+
+/* Tablas */
+.tabla{width:100%;border-collapse:collapse;background:var(--hoja);border:1px solid var(--linea);border-radius:14px;overflow:hidden;font-size:14px}
+.tabla th{text-align:left;font:600 11px var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--gris);padding:11px 14px;border-bottom:1px solid var(--linea);background:#faf8f2}
+.tabla td{padding:11px 14px;border-bottom:1px solid var(--suave);vertical-align:top}
+.tabla tr:last-child td{border-bottom:0}
+.tabla tr.vos td{background:#f0f4fa;font-weight:600}
+.envolver{overflow-x:auto;border-radius:14px}
+.grupo-precio{margin-bottom:22px}
+.grupo-precio h3{font-size:17px;margin:0 0 8px;display:flex;gap:10px;align-items:baseline}
+.grupo-precio h3 small{font:12px var(--mono);color:var(--gris);font-weight:400}
+.barrap{display:flex;align-items:center;gap:10px;min-width:200px}
+.barrap .pr{font:600 13.5px var(--mono);white-space:nowrap;min-width:74px}
+.barrap .pista{flex:1;height:10px;background:var(--suave);border-radius:5px;overflow:hidden;min-width:60px}
+.barrap .pista div{height:100%;border-radius:5px;background:var(--c)}
+.etqp{display:block;margin-top:3px}
+.barata{color:var(--verde);font:600 10.5px var(--mono);text-transform:uppercase;letter-spacing:.06em}
+.cara{color:var(--rojo);font:600 10.5px var(--mono);text-transform:uppercase;letter-spacing:.06em}
+
+/* Anuncios */
+.biblios{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+.biblio{background:var(--hoja);border:1px solid var(--linea);border-radius:10px;padding:10px 12px;display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;font-size:13px;max-width:100%}
+.biblio b{font:700 20px var(--mono)}
+.biblio a.boton{font:600 11.5px var(--mono);text-decoration:none;border:1px solid var(--linea);padding:5px 8px;border-radius:6px;color:var(--tinta)}
+.anuncio{display:flex;flex-direction:column;gap:8px}
+.anuncio .arriba{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.dias{text-align:right;line-height:1}
+.dias b{font:800 30px var(--mono);letter-spacing:-.04em}
+.dias span{display:block;font:10.5px var(--mono);color:var(--gris);text-transform:uppercase;letter-spacing:.06em;margin-top:3px}
+.dias.fuego b{color:var(--rojo)}
+.gancho{font-size:17px;font-weight:700;line-height:1.3}
+.gancho::before{content:"“";color:var(--acento)}.gancho::after{content:"”";color:var(--acento)}
+.texto{color:#39435a;font-size:13.5px}
+.meta{display:flex;gap:6px;flex-wrap:wrap}
+.ganador{font:600 11px var(--mono);color:var(--rojo);text-transform:uppercase;letter-spacing:.06em}
+
+/* Oferta */
+.cita{font-size:17px;font-weight:700;line-height:1.35;margin:8px 0 12px}
+.chips{display:flex;gap:5px;flex-wrap:wrap;margin-top:4px}
+.chips span{font-size:12px;background:var(--suave);border-radius:6px;padding:3px 7px}
+.fila{font-size:13.5px;margin:7px 0}
+.fila b{font:600 11px var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--gris);display:block}
+
+/* Reseñas */
+.nota{display:flex;align-items:baseline;gap:8px;margin:8px 0}
+.nota b{font:800 38px var(--mono);letter-spacing:-.04em}
+.nota span{color:var(--gris);font-size:13px}
+.estrellas{height:6px;background:var(--suave);border-radius:3px;overflow:hidden;margin-bottom:12px}
+.estrellas div{height:100%;background:var(--ambar)}
+.bien li::marker{content:"+  ";color:var(--verde);font-weight:700}
+.mal li::marker{content:"−  ";color:var(--rojo);font-weight:700}
+
+/* Búsqueda */
+.consulta h3{font-size:16px;margin-bottom:10px;display:flex;gap:8px;align-items:center}
+.res{display:flex;gap:10px;align-items:baseline;padding:5px 0;font-size:13.5px;border-bottom:1px solid var(--suave)}
+.res:last-child{border:0}
+.res .p{font:600 12px var(--mono);color:var(--gris);width:22px;flex-shrink:0}
+.res.es b{color:var(--tinta)}
+.res.no{color:var(--gris)}
+.res .t{flex:1;overflow:hidden;text-overflow:ellipsis}
+
+/* Movimientos */
+.linea-t{position:relative;padding-left:26px}
+.linea-t::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:var(--linea)}
+.evento{position:relative;margin-bottom:16px}
+.evento::before{content:"";position:absolute;left:-24px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--c,#999);border:3px solid var(--papel)}
+.evento .f{font:12px var(--mono);color:var(--gris)}
+.evento h3{font-size:16px;margin:2px 0 4px}
+
+/* Oportunidades y plan */
+.opor{border-top:4px solid var(--verde)}
+.opor h3{font-size:18px;margin-bottom:10px}
+.evid{font-size:13.5px;color:#39435a;background:var(--papel);border-radius:8px;padding:8px 10px;margin-bottom:10px}
+.evid b,.acc b{font:600 10.5px var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--gris);display:block;margin-bottom:2px}
+.acc{font-weight:600}
+.plazo{font:600 11px var(--mono);text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
+.plazo.semana{color:var(--rojo)}
+.angulo h3{font-size:17px;margin-bottom:6px}
+
+details{background:var(--hoja);border:1px solid var(--linea);border-radius:12px;padding:12px 16px;margin-top:10px}
+summary{cursor:pointer;font-weight:600}
+.fuentes{columns:2 360px;font:12px/1.7 var(--mono);padding-left:22px}
+.fuentes a{color:var(--gris);word-break:break-all}
+.hallazgos{margin-top:18px}
+.hallazgos h3{font:600 12px var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--gris);margin-bottom:10px}
+.hall{display:grid;grid-template-columns:auto 1fr auto;gap:4px 14px;padding:10px 0;border-bottom:1px solid var(--suave);font-size:14px}
+.hall:last-child{border:0}
+.hall .d{grid-column:2;color:var(--gris);font-size:13px}
+footer{display:block;max-width:1180px;margin:0 auto;padding:24px 28px 50px;color:var(--gris);font:12px var(--mono);border-top:1px solid var(--linea)}
+
+@media (max-width:640px){
+  .portada .dentro,main,.barra .dentro{padding-left:16px;padding-right:16px}
+  .sello{position:static;display:inline-block;margin-bottom:14px}
+  .dos{grid-template-columns:1fr}
+  .grilla{grid-template-columns:1fr}
+  .indice{display:none}
+  .cab h2{font-size:24px}
+}
+@media print{
+  .barra{display:none}
+  body{background:#fff}
+  section{break-inside:avoid-page}
+  .tarjeta,.conclusiones div{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<header class="portada"><div class="dentro" id="portada"></div></header>
+<nav class="barra"><div class="dentro"><div class="indice" id="indice"></div><div class="filtros" id="filtros"></div></div></nav>
+<main id="main"></main>
+<footer id="pie"></footer>
+
+<script>
+const D = /*__DATOS__*/null;
+const PAL = ["#0a84c6","#e8590c","#2b8a3e","#7048e8","#c2255c","#d49b00","#0c8599","#5c7cfa","#a61e4d","#5f3dc4"];
+const N = D.negocio, NEG = N.negocio || {}, A = D.areas || {}, S = D.sintesis || {};
+const COMP = {};
+(N.competidores || []).forEach((c, i) => COMP[c.id] = Object.assign({}, c, {color: PAL[i % PAL.length]}));
+COMP._vos = {id: "_vos", nombre: (NEG.nombre || "Vos") + " (vos)", color: "#10192b"};
+const SC = {}; (S.competidores || []).forEach(c => SC[c.id] = c);
+let filtro = null, CONT = 0;
+
+const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const num = n => typeof n === "number" ? n.toLocaleString("es-AR", {maximumFractionDigits: 2}) : "—";
+const corto = n => typeof n !== "number" ? "—" : n >= 1e6 ? (n/1e6).toLocaleString("es-AR",{maximumFractionDigits:1}) + " M" : n >= 1e4 ? Math.round(n/1e3) + " mil" : num(n);
+const pasa = id => !filtro || id === filtro || id === "_vos";
+const lst = (area, campo) => ((A[area] || {})[campo] || []);
+const tag = id => `<span class="tag" style="--c:${COMP[id] ? COMP[id].color : "#999"}">${esc(COMP[id] ? COMP[id].nombre : (id || "—"))}</span>`;
+const fuente = (u, t) => u ? `<a class="src" href="${esc(u)}" target="_blank" rel="noopener">${t || "fuente ↗"}</a>` : "";
+const dias = f => { if (!f) return null; const d = Math.round((new Date(N.fecha) - new Date(f)) / 864e5); return isNaN(d) ? null : Math.max(0, d); };
+const li = arr => (arr && arr.length) ? `<ul class="lista">${arr.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : `<p class="vacio">—</p>`;
+const fechaLarga = f => { const d = new Date(f + "T12:00:00"); return isNaN(d) ? (f || "") : d.toLocaleDateString("es-AR", {day: "numeric", month: "long", year: "numeric"}); };
+const PLAT = {meta: "Meta · FB e IG", google: "Google", tiktok: "TikTok", linkedin: "LinkedIn", youtube: "YouTube", otra: "Otra"};
+
+function seccion(id, n, titulo, bajada, cuerpo, area) {
+  if (!cuerpo) return "";
+  const res = area && A[area] && A[area].resumen ? `<p class="resumen-area">${esc(A[area].resumen)}</p>` : "";
+  n = String(++CONT).padStart(2, "0");
+  return `<section id="${id}"><div class="cab"><span class="n">${n}</span><h2>${titulo}</h2>${bajada ? `<p>${bajada}</p>` : ""}</div>${res}${cuerpo}</section>`;
+}
+
+function hallazgos(area) {
+  const hs = lst(area, "hallazgos").filter(h => pasa(h.competidor));
+  if (!hs.length) return "";
+  return `<div class="hallazgos"><h3>Otros hallazgos</h3>${hs.map(h => `
+    <div class="hall"><div>${tag(h.competidor)}</div><div><b>${esc(h.titulo)}</b></div><div>${h.confianza ? `<span class="etq ${h.confianza === "alta" ? "baja" : h.confianza === "baja" ? "alta" : "media"}">${esc(h.confianza)}</span> ` : ""}${fuente(h.fuente)}</div>
+    ${h.detalle ? `<div class="d">${esc(h.detalle)}</div>` : ""}</div>`).join("")}</div>`;
+}
+
+function portada() {
+  const comps = N.competidores || [];
+  const activos = lst("anuncios", "bibliotecas").reduce((s, b) => s + (typeof b.activos === "number" ? b.activos : 0), 0)
+    || lst("anuncios", "anuncios").length;
+  const st = D.estadisticas || {};
+  document.getElementById("portada").innerHTML = `
+    <div class="sello">CONFIDENCIAL</div>
+    <div class="expediente">Expediente · inteligencia competitiva · ${esc(N.fecha)}</div>
+    <h1>Lo que tu competencia muestra hoy, <em>${esc(NEG.nombre || "")}</em></h1>
+    <div class="sub">${esc([NEG.rubro, NEG.ubicacion].filter(Boolean).join(" · "))} — ${fechaLarga(N.fecha)}</div>
+    <div class="cifras">
+      <div class="cifra"><b>${comps.length}</b><span>competidores</span></div>
+      <div class="cifra"><b>${activos || "—"}</b><span>anuncios activos</span></div>
+      <div class="cifra"><b>${lst("precios", "precios").filter(p => p.competidor !== "_vos").length || "—"}</b><span>precios relevados</span></div>
+      <div class="cifra"><b>${st.datos || "—"}</b><span>datos</span></div>
+      <div class="cifra"><b>${st.fuentes || "—"}</b><span>fuentes</span></div>
+    </div>`;
+}
+
+function filtros() {
+  const el = document.getElementById("filtros");
+  el.innerHTML = `<small>Ver</small><button class="chip ${!filtro ? "on" : ""}" data-id="">Todos</button>` +
+    (N.competidores || []).map(c => `<button class="chip ${filtro === c.id ? "on" : ""}" data-id="${esc(c.id)}" style="--c:${COMP[c.id].color}"><i></i>${esc(c.nombre)}</button>`).join("");
+  el.querySelectorAll(".chip").forEach(b => b.onclick = () => {
+    filtro = b.dataset.id || null;
+    history.replaceState(null, "", filtro ? "#competidor=" + filtro : location.pathname);
+    render();
+  });
+}
+
+/* ---- Secciones ---- */
+function sResumen() {
+  if (!S.resumen && !(S.conclusiones || []).length) return "";
+  return seccion("resumen", "01", "En pocas palabras", "", `
+    ${S.resumen ? `<p class="resumen">${esc(S.resumen)}</p>` : ""}
+    ${(S.conclusiones || []).length ? `<div class="conclusiones">${S.conclusiones.map(c => `<div>${esc(c)}</div>`).join("")}</div>` : ""}`);
+}
+
+function sCambios() {
+  const c = D.cambios; if (!c || !(c.items || []).length) return "";
+  const items = c.items.filter(i => pasa(i.competidor));
+  if (!items.length) return "";
+  return seccion("cambios", "02", "Qué cambió", `Desde la corrida del ${fechaLarga(c.desde)}.`,
+    `<div class="tarjeta">${items.map(i => `<div class="cambio"><span class="etq ${esc(i.importancia)}">${esc(i.importancia)}</span><div>${tag(i.competidor)} &nbsp;${esc(i.texto)}</div></div>`).join("")}</div>`);
+}
+
+const ORDEN_PLAZO = {"esta semana": 0, "este mes": 1, "trimestre": 2};
+const ORDEN_NIVEL = {alto: 0, medio: 1, bajo: 2};
+function sPlan() {
+  const p = (S.plan || []).slice().sort((a, b) => (ORDEN_PLAZO[a.plazo] ?? 3) - (ORDEN_PLAZO[b.plazo] ?? 3) || (ORDEN_NIVEL[a.impacto] ?? 3) - (ORDEN_NIVEL[b.impacto] ?? 3));
+  if (!p.length) return "";
+  const nivel = (v, inv) => `<span class="etq ${inv ? ({alto: "alta", medio: "media", bajo: "baja"})[v] : ({alto: "baja", medio: "media", bajo: "alta"})[v] || ""}">${esc(v || "—")}</span>`;
+  return seccion("plan", "03", "Plan de acción", "Lo que haríamos con todo esto, en orden.", `
+    <div class="envolver"><table class="tabla"><thead><tr><th>Cuándo</th><th>Acción</th><th>Por qué</th><th>Impacto</th><th>Esfuerzo</th></tr></thead><tbody>
+    ${p.map(x => `<tr><td><span class="plazo ${x.plazo === "esta semana" ? "semana" : ""}">${esc(x.plazo || "")}</span></td><td><b>${esc(x.accion)}</b></td><td>${esc(x.por_que || "")}</td><td>${nivel(x.impacto)}</td><td>${nivel(x.esfuerzo, true)}</td></tr>`).join("")}
+    </tbody></table></div>`);
+}
+
+function sOportunidades() {
+  const o = (S.oportunidades || []).filter(x => !filtro || !(x.competidores || []).length || x.competidores.includes(filtro));
+  const a = S.angulos || [];
+  if (!o.length && !a.length) return "";
+  return seccion("oportunidades", "04", "Oportunidades", "Huecos que deja la competencia. Cada una sale de un dato del informe.", `
+    <div class="grilla">${o.map(x => `<div class="tarjeta opor"><h3>${esc(x.titulo)}</h3>
+      <div class="evid"><b>Evidencia</b>${esc(x.evidencia)}</div><div class="acc"><b>Qué hacer</b>${esc(x.accion)}</div>
+      ${(x.competidores || []).length ? `<div class="meta" style="margin-top:10px">${x.competidores.map(tag).join(" ")}</div>` : ""}</div>`).join("")}</div>
+    ${a.length ? `<div class="cab" style="margin-top:34px"><h2 style="font-size:22px">Ángulos para tus anuncios y contenido</h2><p>Lo que a ellos les funciona, adaptado a vos. Inspiración, no copia.</p></div>
+      <div class="grilla">${a.map(x => `<div class="tarjeta angulo"><h3>${esc(x.titulo)}</h3><p class="texto">${esc(x.por_que)}</p>${x.ejemplo ? `<div class="ganarle"><b>Ejemplo</b>${esc(x.ejemplo)}</div>` : ""}</div>`).join("")}</div>` : ""}`);
+}
+
+function sCompetidores() {
+  const cs = (N.competidores || []).filter(c => pasa(c.id));
+  if (!cs.length) return "";
+  const red = (r, u) => u ? `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(r)} ↗</a>` : "";
+  return seccion("competidores", "05", "Los competidores", "Ordenados por nivel de amenaza.", `<div class="grilla">${cs
+    .slice().sort((a, b) => ((SC[b.id] || {}).amenaza || 0) - ((SC[a.id] || {}).amenaza || 0))
+    .map(c => { const s = SC[c.id] || {}; const am = s.amenaza || 0;
+      return `<div class="tarjeta comp" style="border-top:4px solid ${COMP[c.id].color}">
+        <span class="etq ${esc(c.tipo)}">${esc(c.tipo || "")}</span>
+        <h3>${esc(c.nombre)}</h3><p class="porque">${esc(c.por_que || c.ubicacion || "")}</p>
+        ${am ? `<div class="amenaza">${[1,2,3,4,5].map(i => `<i class="${i <= am ? "on" : ""}"></i>`).join("")}<span>amenaza ${am}/5</span></div>` : ""}
+        ${s.posicionamiento ? `<p class="pos">${esc(s.posicionamiento)}</p>` : ""}
+        ${(s.fortalezas || s.debilidades) ? `<div class="dos"><div><h4>Fuerte en</h4>${li(s.fortalezas)}</div><div><h4>Flojo en</h4>${li(s.debilidades)}</div></div>` : ""}
+        ${s.como_ganarle ? `<div class="ganarle"><b>Cómo ganarle</b>${esc(s.como_ganarle)}</div>` : ""}
+        <div class="enlaces">${red("web", c.web)}${Object.entries(c.redes || {}).map(([r, u]) => red(r, u)).join("")}</div>
+      </div>`; }).join("")}</div>`);
+}
+
+function sPrecios() {
+  const ps = lst("precios", "precios").filter(p => pasa(p.competidor));
+  if (!ps.length && !lst("precios", "hallazgos").length) return "";
+  const grupos = {};
+  ps.forEach(p => { const k = (p.categoria || p.producto || "Otros").trim(); (grupos[k] = grupos[k] || []).push(p); });
+  const html = Object.entries(grupos).map(([k, filas]) => {
+    const nums = filas.map(f => f.precio).filter(v => typeof v === "number");
+    const max = Math.max(...nums, 1), min = Math.min(...nums), monedas = [...new Set(filas.map(f => f.moneda).filter(Boolean))];
+    const ajenos = filas.filter(f => f.competidor !== "_vos" && typeof f.precio === "number").map(f => f.precio);
+    const prom = ajenos.length ? ajenos.reduce((a, b) => a + b, 0) / ajenos.length : null;
+    filas.sort((a, b) => (a.precio ?? Infinity) - (b.precio ?? Infinity));
+    return `<div class="grupo-precio"><h3>${esc(k)} <small>${monedas.join(" / ")}${prom ? ` · promedio de la competencia ${num(Math.round(prom))}` : ""}</small></h3>
+      <div class="envolver"><table class="tabla"><thead><tr><th style="width:22%">Quién</th><th style="width:30%">Precio</th><th>Producto y condiciones</th><th></th></tr></thead><tbody>
+      ${filas.map(f => `<tr class="${f.competidor === "_vos" ? "vos" : ""}"><td>${tag(f.competidor)}</td>
+        <td><div class="barrap" style="--c:${COMP[f.competidor] ? COMP[f.competidor].color : "#999"}"><span class="pr">${esc(f.precio_texto || num(f.precio))}</span><div class="pista">${typeof f.precio === "number" ? `<div style="width:${Math.max(4, f.precio / max * 100)}%"></div>` : ""}</div></div>${nums.length > 1 && f.precio === min ? `<span class="barata etqp">más barato</span>` : ""}${nums.length > 2 && f.precio === max ? `<span class="cara etqp">más caro</span>` : ""}</td>
+        <td>${esc(f.producto || "")}${f.unidad ? ` <span class="src">/ ${esc(f.unidad)}</span>` : ""}${f.condiciones ? `<div class="texto">${esc(f.condiciones)}</div>` : ""}</td>
+        <td>${fuente(f.fuente)}</td></tr>`).join("")}
+      </tbody></table></div></div>`;
+  }).join("");
+  return seccion("precios", "06", "Precios", "Los mismos productos, uno al lado del otro.", html + hallazgos("precios"), "precios");
+}
+
+function sAnuncios() {
+  const bs = lst("anuncios", "bibliotecas").filter(b => pasa(b.competidor));
+  const an = lst("anuncios", "anuncios").filter(a => pasa(a.competidor)).map(a => Object.assign({}, a, {d: dias(a.activo_desde)}))
+    .sort((a, b) => (b.d ?? -1) - (a.d ?? -1));
+  if (!bs.length && !an.length && !lst("anuncios", "hallazgos").length) return "";
+  const biblios = bs.length ? `<div class="biblios">${bs.map(b => `<div class="biblio">${tag(b.competidor)}<span class="src">${esc(PLAT[b.plataforma] || b.plataforma)}</span>
+      <b>${typeof b.activos === "number" ? b.activos : "?"}</b><span class="src">activos</span>
+      ${b.url ? `<a class="boton" href="${esc(b.url)}" target="_blank" rel="noopener">${b.verificado === false ? "abrir y revisar ↗" : "ver biblioteca ↗"}</a>` : ""}</div>`).join("")}</div>` : "";
+  const cards = an.length ? `<div class="grilla">${an.map(a => `<div class="tarjeta anuncio">
+      <div class="arriba"><div>${tag(a.competidor)}<div class="meta" style="margin-top:6px"><span class="etq">${esc(PLAT[a.plataforma] || a.plataforma || "")}</span>${a.formato ? `<span class="etq">${esc(a.formato)}</span>` : ""}</div></div>
+        ${a.d != null ? `<div class="dias ${a.d >= 30 ? "fuego" : ""}"><b>${a.d}</b><span>días activo</span></div>` : ""}</div>
+      ${a.d >= 30 ? `<div class="ganador">● Lleva más de un mes: probablemente le funciona</div>` : ""}
+      ${a.gancho ? `<div class="gancho">${esc(a.gancho)}</div>` : ""}
+      ${a.texto ? `<div class="texto">${esc(a.texto)}</div>` : ""}
+      ${a.oferta ? `<div class="fila"><b>Oferta</b>${esc(a.oferta)}</div>` : ""}
+      <div class="fila"><b>Botón y destino</b>${esc(a.cta || "—")}${a.landing ? ` → <a href="${esc(a.landing)}" target="_blank" rel="noopener">${esc(a.landing.replace(/^https?:\/\//, "").slice(0, 40))}</a>` : ""}</div>
+      <div style="margin-top:auto">${fuente(a.fuente, "ver anuncio ↗")} ${a.activo_desde ? `<span class="src">· desde ${esc(a.activo_desde)}</span>` : ""}</div>
+    </div>`).join("")}</div>` : "";
+  return seccion("anuncios", "07", "Anuncios", "Ordenados por días activos. Nadie paga meses por un anuncio que no vende.", biblios + cards + hallazgos("anuncios"), "anuncios");
+}
+
+function sOferta() {
+  const os = lst("oferta", "ofertas").filter(o => pasa(o.competidor));
+  if (!os.length && !lst("oferta", "hallazgos").length) return "";
+  return seccion("oferta", "08", "Qué venden y cómo", "Su promesa, su embudo y las herramientas que usan.", `<div class="grilla">${os.map(o => `<div class="tarjeta">
+      ${tag(o.competidor)}
+      ${o.propuesta_valor ? `<div class="cita">“${esc(o.propuesta_valor)}”</div>` : ""}
+      ${(o.productos || []).length ? `<div class="fila"><b>Vende</b><div class="chips">${o.productos.map(p => `<span>${esc(p)}</span>`).join("")}</div></div>` : ""}
+      ${o.garantia ? `<div class="fila"><b>Garantía</b>${esc(o.garantia)}</div>` : ""}
+      ${o.cta_principal ? `<div class="fila"><b>Te pide</b>${esc(o.cta_principal)}</div>` : ""}
+      ${o.embudo ? `<div class="fila"><b>Embudo</b>${esc(o.embudo)}</div>` : ""}
+      ${(o.tecnologia || []).length ? `<div class="fila"><b>Tecnología</b><div class="chips">${o.tecnologia.map(p => `<span>${esc(p)}</span>`).join("")}</div></div>` : ""}
+      ${fuente(o.fuente)}</div>`).join("")}</div>` + hallazgos("oferta"), "oferta");
+}
+
+function sRedes() {
+  const ps = lst("redes", "perfiles").filter(p => pasa(p.competidor));
+  if (!ps.length && !lst("redes", "hallazgos").length) return "";
+  const tabla = ps.length ? `<div class="envolver"><table class="tabla"><thead><tr><th>Quién</th><th>Red</th><th>Seguidores</th><th>Posteos / semana</th><th>Formato</th><th>Temas</th></tr></thead><tbody>
+    ${ps.slice().sort((a, b) => (b.seguidores || 0) - (a.seguidores || 0)).map(p => `<tr class="${p.competidor === "_vos" ? "vos" : ""}"><td>${tag(p.competidor)}</td><td><a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.red)}</a></td>
+      <td class="mono"><b>${corto(p.seguidores)}</b></td><td class="mono">${num(p.publicaciones_por_semana)}</td><td>${esc(p.formato_principal || "")}</td><td>${esc((p.temas || []).join(", "))}</td></tr>`).join("")}
+    </tbody></table></div>` : "";
+  const mejores = ps.flatMap(p => (p.mejor_contenido || []).map(m => Object.assign({competidor: p.competidor, red: p.red}, m)));
+  const top = mejores.length ? `<div class="cab" style="margin-top:30px"><h2 style="font-size:20px">Lo que mejor les funciona</h2></div>
+    <div class="grilla chica">${mejores.map(m => `<div class="tarjeta">${tag(m.competidor)} <span class="etq">${esc(m.red)}</span>
+      <p style="font-weight:600;margin:10px 0 6px">${esc(m.descripcion)}</p><div class="mono" style="color:var(--rojo);font-weight:600">${esc(m.metrica || "")}</div>
+      <div style="margin-top:8px">${fuente(m.url, "ver publicación ↗")}</div></div>`).join("")}</div>` : "";
+  return seccion("redes", "09", "Redes y contenido", "", tabla + top + hallazgos("redes"), "redes");
+}
+
+function sResenas() {
+  const rs = lst("resenas", "reputacion").filter(r => pasa(r.competidor));
+  if (!rs.length && !lst("resenas", "hallazgos").length) return "";
+  return seccion("resenas", "10", "Lo que dicen sus clientes", "Las quejas de sus clientes son lo que vos podés prometer.", `<div class="grilla">${rs.map(r => `<div class="tarjeta">
+      ${tag(r.competidor)} <span class="etq">${esc(r.plataforma)}</span>
+      <div class="nota"><b>${num(r.nota)}</b><span>/ ${r.escala || 5} · ${num(r.cantidad)} reseñas</span></div>
+      <div class="estrellas"><div style="width:${typeof r.nota === "number" ? r.nota / (r.escala || 5) * 100 : 0}%"></div></div>
+      <div class="dos"><div><h4>Elogian</h4><ul class="lista bien">${(r.elogios || []).map(x => `<li>${esc(x)}</li>`).join("") || "<li>—</li>"}</ul></div>
+      <div><h4>Se quejan de</h4><ul class="lista mal">${(r.quejas || []).map(x => `<li>${esc(x)}</li>`).join("") || "<li>—</li>"}</ul></div></div>
+      <div style="margin-top:10px">${fuente(r.fuente)}</div></div>`).join("")}</div>` + hallazgos("resenas"), "resenas");
+}
+
+function sBusqueda() {
+  const bs = lst("busqueda", "busquedas");
+  if (!bs.length && !lst("busqueda", "hallazgos").length) return "";
+  const TIPO = {google: "Google", maps: "Google Maps", ia: "Buscador con IA"};
+  return seccion("busqueda", "11", "Dónde te encuentra el cliente", "Lo que aparece cuando alguien busca lo que vendés.", `<div class="grilla">${bs.map(b => `<div class="tarjeta consulta">
+      <h3><span class="etq">${esc(TIPO[b.tipo] || b.tipo || "Google")}</span> ${esc(b.consulta)}</h3>
+      ${(b.resultados || []).map(r => { const es = r.competidor && COMP[r.competidor]; const dim = filtro && r.competidor !== filtro && r.competidor !== "_vos";
+        return `<div class="res ${es ? "es" : "no"}" style="${dim ? "opacity:.35" : ""}"><span class="p">${esc(r.posicion)}</span><span class="t">${es ? tag(r.competidor) + " · " : ""}${r.url ? `<a href="${esc(r.url)}" target="_blank" rel="noopener" style="color:inherit">${esc(r.titulo || r.url)}</a>` : esc(r.titulo)}</span></div>`; }).join("")}
+    </div>`).join("")}</div>` + hallazgos("busqueda"), "busqueda");
+}
+
+function sMovimientos() {
+  const ms = lst("movimientos", "movimientos").filter(m => pasa(m.competidor)).slice().sort((a, b) => String(b.fecha).localeCompare(String(a.fecha)));
+  if (!ms.length && !lst("movimientos", "hallazgos").length) return "";
+  return seccion("movimientos", "12", "Movimientos", "Hacia dónde va cada uno.", `<div class="linea-t">${ms.map(m => `<div class="evento" style="--c:${COMP[m.competidor] ? COMP[m.competidor].color : "#999"}">
+      <div class="f">${esc(fechaLarga(m.fecha))} · <span class="etq">${esc((m.tipo || "").replace("_", " "))}</span></div>
+      <h3>${tag(m.competidor)} &nbsp;${esc(m.titulo)}</h3>${m.detalle ? `<div class="texto">${esc(m.detalle)}</div>` : ""}<div>${fuente(m.fuente)}</div></div>`).join("")}</div>` + hallazgos("movimientos"), "movimientos");
+}
+
+function sFinal() {
+  const nf = Object.entries(A).flatMap(([area, d]) => (d.no_encontrado || []).filter(x => pasa(x.competidor)).map(x => Object.assign({area}, x)));
+  const urls = new Set();
+  Object.values(A).forEach(d => Object.values(d).forEach(v => Array.isArray(v) && v.forEach(x => {
+    if (x && typeof x === "object") { ["fuente", "url"].forEach(k => x[k] && /^https?:/.test(x[k]) && urls.add(x[k])); (x.resultados || []).forEach(r => r.url && urls.add(r.url)); }
+  })));
+  return seccion("fuentes", "13", "Fuentes y límites", "Todo dato del informe sale de una de estas páginas, vistas el " + esc(fechaLarga(N.fecha)) + ".", `
+    ${nf.length ? `<details><summary>Lo que no pudimos ver (${nf.length})</summary><div style="margin-top:10px">${nf.map(x => `<div class="hall"><div>${tag(x.competidor)}</div><div><b>${esc(x.que)}</b> <span class="src">· ${esc(x.area)}</span></div><div></div><div class="d">Buscamos en: ${esc(x.donde || "")}</div></div>`).join("")}</div></details>` : ""}
+    <details><summary>Todas las fuentes (${urls.size})</summary><ol class="fuentes">${[...urls].sort().map(u => `<li><a href="${esc(u)}" target="_blank" rel="noopener">${esc(u)}</a></li>`).join("")}</ol></details>`);
+}
+
+const SECCIONES = [["resumen","Resumen"],["cambios","Cambios"],["plan","Plan"],["oportunidades","Oportunidades"],["competidores","Competidores"],["precios","Precios"],["anuncios","Anuncios"],["oferta","Oferta"],["redes","Redes"],["resenas","Reseñas"],["busqueda","Búsqueda"],["movimientos","Movimientos"],["fuentes","Fuentes"]];
+function render() {
+  const main = document.getElementById("main"); CONT = 0;
+  main.innerHTML = [sResumen(), sCambios(), sPlan(), sOportunidades(), sCompetidores(), sPrecios(), sAnuncios(), sOferta(), sRedes(), sResenas(), sBusqueda(), sMovimientos(), sFinal()].join("");
+  document.getElementById("indice").innerHTML = SECCIONES.filter(([id]) => document.getElementById(id)).map(([id, t]) => `<a href="#${id}">${t}</a>`).join("");
+  filtros();
+}
+
+portada();
+const m = location.hash.match(/competidor=([^&]+)/);
+if (m && COMP[decodeURIComponent(m[1])]) filtro = decodeURIComponent(m[1]);
+render();
+document.getElementById("pie").innerHTML = `Hecho con la skill <b>claude-espia</b> de NodeStudio · Solo información pública · Los precios y anuncios cambian: revisá la fecha de cada fuente.`;
+</script>
+</body>
+</html>
