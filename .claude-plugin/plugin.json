@@ -1,10 +1,10 @@
 {
-  "name": "claude-espia",
-  "version": "1.0.0",
-  "description": "Agente que espía a tu competencia: precios, anuncios activos, redes, reseñas, SEO y movimientos, con fuente y fecha. Para cualquier rubro.",
+  "name": "falcon",
+  "version": "1.1.0",
+  "description": "Falcon: agente que espía a tu competencia: precios, anuncios activos, redes, reseñas, SEO y movimientos, con fuente y fecha. Para cualquier rubro.",
   "author": { "name": "NodeStudio" },
-  "homepage": "https://github.com/nodestudioai/claude-espia",
-  "repository": "https://github.com/nodestudioai/claude-espia",
+  "homepage": "https://github.com/nodestudioai/falcon",
+  "repository": "https://github.com/nodestudioai/falcon",
   "license": "MIT",
   "keywords": ["competencia", "competitive-intelligence", "anuncios", "precios", "marketing", "agentes", "spanish"]
 }

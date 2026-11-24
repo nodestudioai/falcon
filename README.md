@@ -1,4 +1,4 @@
-# Claude Espía
+# Falcon
 
 **Contale a Claude de qué es tu negocio y te trae todo lo que hace tu competencia hoy.**
 
@@ -39,20 +39,20 @@ Después un agente estratega lee todo y escribe: nivel de amenaza de cada compet
 ### Claude Code (recomendado)
 
 ```
-/plugin marketplace add nodestudioai/claude-espia
-/plugin install claude-espia@nodestudio
+/plugin marketplace add nodestudioai/falcon
+/plugin install falcon@nodestudio
 ```
 
 O a mano, copiando la skill a tu carpeta de skills:
 
 ```bash
-git clone https://github.com/nodestudioai/claude-espia.git
-cp -r claude-espia/skills/espia ~/.claude/skills/
+git clone https://github.com/nodestudioai/falcon.git
+cp -r falcon/skills/falcon ~/.claude/skills/
 ```
 
 ### Claude.ai (web o escritorio)
 
-1. Descargá `claude-espia.zip` desde [Releases](https://github.com/nodestudioai/claude-espia/releases/latest).
+1. Descargá `falcon.zip` desde [Releases](https://github.com/nodestudioai/falcon/releases/latest).
 2. En Claude: **Configuración → Capacidades → Skills → Subir skill** y elegí el zip.
 3. Activá la búsqueda web y la ejecución de código.
 
@@ -89,9 +89,9 @@ semana con `/schedule`.
 
 ## Ejemplo incluido
 
-En [`skills/espia/ejemplo/cafe-brote`](skills/espia/ejemplo/cafe-brote) hay un espionaje completo de una cafetería
+En [`skills/falcon/ejemplo/cafe-brote`](skills/falcon/ejemplo/cafe-brote) hay un espionaje completo de una cafetería
 **inventada** (Café Brote, con 5 competidores también inventados), con dos corridas para ver el modo vigilancia.
-Descargá [`informe.html`](skills/espia/ejemplo/cafe-brote/2026-11-24/informe.html) y abrilo para ver el resultado.
+Descargá [`informe.html`](skills/falcon/ejemplo/cafe-brote/2026-11-24/informe.html) y abrilo para ver el resultado.
 
 ## Cómo funciona
 
@@ -106,7 +106,7 @@ tu negocio ──► Claude encuentra a la competencia ──► negocio.json
                      estratega ──► sintesis.json ──► armar_informe.py ──► informe.html
 ```
 
-- `skills/espia/SKILL.md`: el agente principal, paso a paso.
+- `skills/falcon/SKILL.md`: el agente principal, paso a paso.
 - `referencias/agentes/`: las instrucciones de cada espía.
 - `referencias/rubros.md`: dónde buscar a la competencia en cada rubro.
 - `referencias/fuentes.md`: todas las fuentes públicas y cómo leerlas.

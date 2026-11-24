@@ -4,10 +4,10 @@
   "metadata": { "description": "Skills de Claude hechas por NodeStudio." },
   "plugins": [
     {
-      "name": "claude-espia",
+      "name": "falcon",
       "source": "./",
-      "description": "Agente que espía a tu competencia: precios, anuncios activos, redes, reseñas, SEO y movimientos, con fuente y fecha. Para cualquier rubro.",
-      "version": "1.0.0",
+      "description": "Falcon: agente que espía a tu competencia: precios, anuncios activos, redes, reseñas, SEO y movimientos, con fuente y fecha. Para cualquier rubro.",
+      "version": "1.1.0",
       "category": "productivity"
     }
   ]
